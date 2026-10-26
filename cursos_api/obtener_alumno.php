@@ -29,7 +29,7 @@ try{
         ]);
     }else{
         echo json_encode([
-            "exito"=>true,
+            "exito"=>false,
             "mensaje"=>"matricula invalida"
         ]);
     }
