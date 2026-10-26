@@ -1,6 +1,8 @@
 package com.example.app_cursos.Vista
 
+
 import android.os.Bundle
+import android.content.Intent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -107,8 +109,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun verRegistros() {
+        val intent = Intent(this, RegistrosActivity::class.java)
+        startActivity(intent)
 
-        // Pendiente: conectar la pantalla de registros
-        Toast.makeText( this, "Pantalla de registros pendiente de integrar",Toast.LENGTH_SHORT).show()
     }
 }
