@@ -19,9 +19,10 @@ import com.example.app_cursos.Modelo.dataCarreras
 import com.example.app_cursos.Modelo.dataCursos
 import com.example.app_cursos.Presentador.clsCarrerasPresentador
 import com.example.app_cursos.R
-import android.content.Intent
+
 
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var spCarreras: Spinner
     private lateinit var rvCursos: RecyclerView

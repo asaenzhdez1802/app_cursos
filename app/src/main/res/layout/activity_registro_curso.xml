@@ -9,7 +9,7 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarRegistro"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="118dp"
         android:background="#0D47A1"
         app:title="REGISTRO AL CURSO"
         app:titleTextColor="@android:color/white" />
@@ -26,13 +26,13 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="INSCRIPCIÓN:"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="#000000"
+                android:layout_height="36dp"
+                android:layout_marginBottom="8dp"
                 android:gravity="center"
-                android:layout_marginBottom="8dp" />
+                android:text="INSCRIPCIÓN:"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <!-- Tarjeta del curso -->
             <androidx.cardview.widget.CardView
@@ -70,12 +70,12 @@
             <!-- Matricula -->
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginBottom="4dp"
                 android:text="MATRÍCULA DEL ALUMNO:"
-                android:textStyle="bold"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:layout_marginBottom="4dp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etMatricula"
@@ -90,12 +90,12 @@
             <!-- Fecha de registro -->
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginBottom="4dp"
                 android:text="FECHA DE REGISTRO:"
-                android:textStyle="bold"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:layout_marginBottom="4dp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -123,12 +123,12 @@
             <!-- Correo institucional (no editable, se carga de la BD) -->
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginBottom="4dp"
                 android:text="CORREO INSTITUCIONAL:"
-                android:textStyle="bold"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:layout_marginBottom="4dp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etCorreoInstitucional"
@@ -146,21 +146,21 @@
                 android:id="@+id/btnConfirmarInscripcion"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#253176"
                 android:text="CONFIRMAR INSCRIPCIÓN"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:backgroundTint="#2E7D32"
-                android:layout_marginBottom="12dp" />
+                android:textStyle="bold" />
 
             <!-- Boton Cancelar -->
             <Button
                 android:id="@+id/btnCancelarInscripcion"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
+                android:backgroundTint="#D01313"
                 android:text="CANCELAR"
                 android:textColor="#000000"
-                android:textStyle="bold"
-                android:backgroundTint="#E0E0E0" />
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>
