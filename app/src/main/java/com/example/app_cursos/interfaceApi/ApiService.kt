@@ -21,15 +21,15 @@ interface ApiService {
         @Query("carrera_id") carreraId: Int
     ): List<dataCursos>
 
-    @GET("detalle_curso.php")
-    suspend fun obtenerDetalle(
-        @Query("curso_id") cursoId: Int
-    ): dataDetalleCurso
-
     @GET("obtener_registros.php")
     suspend fun obtenerRegistros(
         @Query("carrera_id") carreraId: Int
     ): dataRegistros
+
+    @GET("detalle_curso.php")
+    suspend fun obtenerDetalle(
+        @Query("curso_id") cursoId: Int
+    ): dataDetalleCurso
 
     @GET("obtener_alumno.php")
     suspend fun obtenerAlumnos(
