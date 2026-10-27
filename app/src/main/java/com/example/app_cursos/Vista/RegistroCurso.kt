@@ -70,6 +70,8 @@ class RegistroCurso : AppCompatActivity() {
             }
         })
         etFecha.setOnClickListener { mostrarCalendario() }
+        btnConfirmar.setOnClickListener { confirmarInscripcio() }
+        btnCancelar.setOnClickListener { finish() }
     }
     private fun mostrarCalendario(){
         val c= Calendar.getInstance()
@@ -82,6 +84,7 @@ class RegistroCurso : AppCompatActivity() {
         ).show()
     }
     private fun confirmarInscripcio(){
+
         val matricula=etMatricula.text.toString().trim()
         val fecha=etFecha.text.toString().trim()
         val correo=etCorreo.text.toString().trim()

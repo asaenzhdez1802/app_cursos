@@ -38,7 +38,7 @@ class ClsInscripcionPresenter(private val view: RegistroCurso){
         }
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val respuesta=modelo.registrarInscripcion(matricula,cursoId.toString(),fecha)
+                val respuesta = modelo.registrarInscripcion(idCurso = cursoId, matricula = matricula, fecha = fecha)
                 withContext(Dispatchers.Main){
                     view.mostrarResultado(respuesta.exito,respuesta.mensaje)
                 }
