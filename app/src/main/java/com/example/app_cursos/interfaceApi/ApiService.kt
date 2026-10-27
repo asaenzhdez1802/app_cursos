@@ -2,6 +2,7 @@ package com.example.app_cursos.interfaceApi
 
 import com.example.app_cursos.Modelo.dataCarreras
 import com.example.app_cursos.Modelo.dataCursos
+import com.example.app_cursos.Modelo.dataDetalleCurso
 import retrofit2.http.GET
 import retrofit2.http.Query
 import com.example.app_cursos.Modelo.dataRegistros
@@ -20,4 +21,9 @@ interface ApiService {
     suspend fun obtenerRegistros(
         @Query("carrera_id") carreraId: Int
     ): dataRegistros
+
+    @GET("detalle_curso.php")
+    suspend fun obtenerDetalle(
+        @Query("curso_id") cursoId: Int
+    ): dataDetalleCurso
 }

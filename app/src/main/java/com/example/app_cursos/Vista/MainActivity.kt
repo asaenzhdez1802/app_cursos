@@ -98,8 +98,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun seleccionarCurso(curso: dataCursos) {
-
-        Toast.makeText(this,"Ver detalle de: " + curso.nombre,Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, DetalleCursoActivity::class.java)
+        intent.putExtra("CURSO_ID", curso.id)
+        startActivity(intent)
     }
 
     fun registrarCurso(curso: dataCursos) {
