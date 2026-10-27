@@ -1,6 +1,8 @@
 package com.example.app_cursos.Modelo
 
 import com.example.app_cursos.interfaceApi.ApiService
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
@@ -8,7 +10,7 @@ import retrofit2.converter.kotlinx.serialization.asConverterFactory
 
 object RetrofitClient {
 
-    private const val BASE_URL = "http://192.168.1.75/cursos_api/"
+    private const val BASE_URL = "http://10.110.157.49/cursos_api/"
 
     private val json = Json {
         ignoreUnknownKeys = true
