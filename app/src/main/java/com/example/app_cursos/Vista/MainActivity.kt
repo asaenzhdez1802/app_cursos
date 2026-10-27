@@ -1,6 +1,7 @@
 package com.example.app_cursos.Vista
 
 import android.os.Bundle
+import android.content.Intent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -96,8 +97,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun seleccionarCurso(curso: dataCursos) {
-
-        Toast.makeText(this,"Ver detalle de: " + curso.nombre,Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, DetalleCursoActivity::class.java)
+        intent.putExtra("CURSO_ID", curso.id)
+        startActivity(intent)
     }
 
     fun registrarCurso(curso: dataCursos) {
