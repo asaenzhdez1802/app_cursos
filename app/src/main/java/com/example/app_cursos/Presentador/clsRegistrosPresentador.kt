@@ -17,14 +17,11 @@ class clsRegistrosPresentador(val vista: RegistrosActivity) {
 
     fun iniciar() {
 
-        // Se usa un Scope simple para no bloquear la interfaz
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                // 1. Cargar la lista de carreras en el Spinner
                 listaCarreras = modeloCarreras.obtenerCarreras()
                 vista.mostrarCarreras(listaCarreras)
 
-                // 2. Cargar todos los registros por defecto
                 cargarRegistros(0)
 
             } catch (e: Exception) {
@@ -38,7 +35,6 @@ class clsRegistrosPresentador(val vista: RegistrosActivity) {
         if (posicion >= 0 && posicion < listaCarreras.size) {
             val carrera = listaCarreras[posicion]
 
-            // Si el identificador es 0, la API devuelve todas las carreras
             cargarRegistros(carrera.id)
         }
     }
