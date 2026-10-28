@@ -11,6 +11,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
 
+
 interface ApiService {
 
     @GET("obtener_carreras.php")
@@ -31,6 +32,9 @@ interface ApiService {
         @Query("curso_id") cursoId: Int
     ): dataDetalleCurso
 
+
+
+
     @GET("obtener_alumno.php")
     suspend fun obtenerAlumnos(
         @Query("matricula") matricula: String
@@ -40,4 +44,5 @@ interface ApiService {
     suspend fun registrarInscripcion(
         @Body request: DataInscripcion
     ): DataInscripcion
+
 }
