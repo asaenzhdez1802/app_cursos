@@ -58,7 +58,7 @@ class RegistrosAdaptador(
         holder.progresoInscripciones.max = registro.cupoTotal
         holder.progresoInscripciones.progress = registro.inscritos
 
-        val baseUrl = "http://172.31.98.90/cursos_api/"
+        val baseUrl = "http://10.110.157.49/cursos_api/"
         val urlImagen = baseUrl + registro.urlImagen
 
         Glide.with(holder.itemView.context)

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="118dp"
+        android:background="#0D47A1"
+        app:title="REGISTRO AL CURSO"
+        app:titleTextColor="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="INSCRIPCIÓN:"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Tarjeta del curso -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/imgCursoInscripcion"
+                        android:layout_width="80dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/tvNombreCursoInscripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="PROGRAMACIÓN AVANZADA"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:textColor="#000000" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Matricula -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginBottom="4dp"
+                android:text="MATRÍCULA DEL ALUMNO:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etMatricula"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@android:drawable/editbox_background_normal"
+                android:hint="20251056"
+                android:inputType="text"
+                android:paddingHorizontal="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Fecha de registro -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:layout_marginBottom="4dp"
+                android:text="FECHA DE REGISTRO:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="12dp">
+
+                <EditText
+                    android:id="@+id/etFechaRegistro"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:drawable/editbox_background_normal"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:hint="YYYY-MM-DD"
+                    android:paddingHorizontal="12dp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="12dp"
+                    android:src="@android:drawable/ic_menu_my_calendar" />
+            </FrameLayout>
+
+            <!-- Correo institucional (no editable, se carga de la BD) -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginBottom="4dp"
+                android:text="CORREO INSTITUCIONAL:"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etCorreoInstitucional"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@android:drawable/editbox_background_normal"
+                android:focusable="false"
+                android:clickable="false"
+                android:hint="se carga al validar la matricula"
+                android:paddingHorizontal="12dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Boton Confirmar -->
+            <Button
+                android:id="@+id/btnConfirmarInscripcion"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="#253176"
+                android:text="CONFIRMAR INSCRIPCIÓN"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <!-- Boton Cancelar -->
+            <Button
+                android:id="@+id/btnCancelarInscripcion"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:backgroundTint="#D01313"
+                android:text="CANCELAR"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
