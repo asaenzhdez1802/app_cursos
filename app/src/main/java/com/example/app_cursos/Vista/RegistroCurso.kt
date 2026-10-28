@@ -27,12 +27,8 @@ class RegistroCurso : AppCompatActivity() {
     private lateinit var  presentador: ClsInscripcionPresenter
 
     private var cursoId: Int=0
-    companion object{
-        const val   CURSO_ID ="CURSO_ID"
-        const val  CURSO_NOMBRE="CURSO_NOMBRE"
-        const val  CURSO_IMAGEN="CURSO_IMAGEN"
-        private const val BASE_URL = "http://10.110.157.49/cursos_api/"
-    }
+    private val BASE_URL = "http://10.110.157.49/cursos_api/"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -47,9 +43,9 @@ class RegistroCurso : AppCompatActivity() {
 
         presentador= ClsInscripcionPresenter(this)
 
-        cursoId=intent.getIntExtra(CURSO_ID,0)
-        val nombre=intent.getStringExtra(CURSO_NOMBRE) ?:""
-        val imagen=intent.getStringExtra(CURSO_IMAGEN)?:""
+        cursoId = intent.getIntExtra("CURSO_ID", 0)
+        val nombre = intent.getStringExtra("CURSO_NOMBRE") ?: ""
+        val imagen = intent.getStringExtra("CURSO_IMAGEN") ?: ""
 
         tvNombreCurso.text=nombre
         Glide.with(this)
