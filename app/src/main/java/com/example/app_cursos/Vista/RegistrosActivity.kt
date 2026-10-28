@@ -52,19 +52,19 @@ class RegistrosActivity : AppCompatActivity() {
             insets
         }
 
-        // 1. Enlazar los componentes del diseño
+        // se enlaza los componentes del diseño
         spCarrerasRegistros = findViewById(R.id.spCarrerasRegistros)
         txtTotalInscripciones = findViewById(R.id.txtTotalInscripciones)
         rvRegistros = findViewById(R.id.rvRegistros)
         btnVolverCatalogo = findViewById(R.id.btnVolverCatalogo)
 
-        // 2. Configurar la lista de registros
+        // se configurar la lista de registros
         rvRegistros.layoutManager = LinearLayoutManager(this)
 
         adaptadorRegistros = RegistrosAdaptador(emptyList())
         rvRegistros.adapter = adaptadorRegistros
 
-        // 3. Inicializar el presentador
+        // se inicializa el presentador
         presenter = clsRegistrosPresentador(this)
 
         configurarListeners()
