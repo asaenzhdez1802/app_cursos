@@ -1,11 +1,16 @@
 package com.example.app_cursos.interfaceApi
 
+import com.example.app_cursos.Modelo.DataAlumnoRespon
+import com.example.app_cursos.Modelo.DataInscripcion
 import com.example.app_cursos.Modelo.dataCarreras
 import com.example.app_cursos.Modelo.dataCursos
 import com.example.app_cursos.Modelo.dataDetalleCurso
-import retrofit2.http.GET
-import retrofit2.http.Query
 import com.example.app_cursos.Modelo.dataRegistros
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Query
+
 
 interface ApiService {
 
@@ -26,4 +31,18 @@ interface ApiService {
     suspend fun obtenerDetalle(
         @Query("curso_id") cursoId: Int
     ): dataDetalleCurso
+
+
+
+
+    @GET("obtener_alumno.php")
+    suspend fun obtenerAlumnos(
+        @Query("matricula") matricula: String
+    ): DataAlumnoRespon
+
+    @POST("registrar_inscripcion.php")
+    suspend fun registrarInscripcion(
+        @Body request: DataInscripcion
+    ): DataInscripcion
+
 }
