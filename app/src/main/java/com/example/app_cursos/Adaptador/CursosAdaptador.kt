@@ -34,7 +34,7 @@ class CursosAdaptador( private var cursos: List<dataCursos>,private val activity
         val curso = cursos[position]
         holder.txtCurso.text = curso.nombre
         holder.txtSalon.text = "Salón: " + curso.salon
-        val baseUrl = "http://10.110.157.49/cursos_api/"
+        val baseUrl = "http://10.71.241.74/cursos_api/"
         val urlImagen = baseUrl + curso.urlImagen
         Glide.with(holder.itemView.context)
             .load(urlImagen)
@@ -42,8 +42,7 @@ class CursosAdaptador( private var cursos: List<dataCursos>,private val activity
             .error(android.R.drawable.stat_notify_error)
             .into(holder.imgCurso)
 
-        holder.btnVerDetalle.setOnClickListener(
-            object : View.OnClickListener {
+        holder.btnVerDetalle.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v: View?) {
                     activity.seleccionarCurso(curso)
                 }

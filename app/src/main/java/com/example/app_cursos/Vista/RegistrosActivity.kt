@@ -34,21 +34,9 @@ class RegistrosActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_registros)
 
-        ViewCompat.setOnApplyWindowInsetsListener(
-            findViewById(R.id.main)
-        ) { v, insets ->
-
-            val systemBars = insets.getInsets(
-                WindowInsetsCompat.Type.systemBars()
-            )
-
-            v.setPadding(
-                systemBars.left,
-                systemBars.top,
-                systemBars.right,
-                systemBars.bottom
-            )
-
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
@@ -60,7 +48,6 @@ class RegistrosActivity : AppCompatActivity() {
 
         // se configurar la lista de registros
         rvRegistros.layoutManager = LinearLayoutManager(this)
-
         adaptadorRegistros = RegistrosAdaptador(emptyList())
         rvRegistros.adapter = adaptadorRegistros
 
@@ -72,61 +59,32 @@ class RegistrosActivity : AppCompatActivity() {
     }
 
     private fun configurarListeners() {
-
         spCarrerasRegistros.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
 
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
+                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     presenter.seleccionarCarrera(position)
                 }
 
-                override fun onNothingSelected(
-                    parent: AdapterView<*>?
-                ) {
-                }
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
             }
 
-        btnVolverCatalogo.setOnClickListener(
-            this::volverCatalogo
-        )
+        btnVolverCatalogo.setOnClickListener(this::volverCatalogo)
     }
 
     fun mostrarCarreras(carreras: List<dataCarreras>) {
-
-        val adapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_spinner_item,
-            carreras
-        )
-
-        adapter.setDropDownViewResource(
-            android.R.layout.simple_spinner_dropdown_item
-        )
-
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, carreras)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spCarrerasRegistros.adapter = adapter
     }
 
     fun mostrarRegistros(registros: dataRegistros) {
-
-        txtTotalInscripciones.text =
-            "Total de inscripciones: " +
-                    registros.totalInscripciones.toString()
-
+        txtTotalInscripciones.text = "Total de inscripciones: " + registros.totalInscripciones.toString()
         adaptadorRegistros.actualizarLista(registros.cursos)
     }
 
     fun mostrarError(mensaje: String) {
-
-        Toast.makeText(
-            this,
-            mensaje,
-            Toast.LENGTH_LONG
-        ).show()
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
 
     fun volverCatalogo(v: View) {

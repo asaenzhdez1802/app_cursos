@@ -15,50 +15,26 @@ class RegistrosAdaptador(
     private var registros: List<dataRegistroCurso>
 ) : RecyclerView.Adapter<RegistrosAdaptador.RegistroViewHolder>() {
 
-    class RegistroViewHolder(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
-
-        val imgCursoRegistro: ImageView =
-            itemView.findViewById(R.id.imgCursoRegistro)
-
-        val txtCursoRegistro: TextView =
-            itemView.findViewById(R.id.txtCursoRegistro)
-
-        val progresoInscripciones: ProgressBar =
-            itemView.findViewById(R.id.progresoInscripciones)
-
-        val txtInscritosRegistro: TextView =
-            itemView.findViewById(R.id.txtInscritosRegistro)
+    class RegistroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imgCursoRegistro: ImageView = itemView.findViewById(R.id.imgCursoRegistro)
+        val txtCursoRegistro: TextView = itemView.findViewById(R.id.txtCursoRegistro)
+        val progresoInscripciones: ProgressBar = itemView.findViewById(R.id.progresoInscripciones)
+        val txtInscritosRegistro: TextView = itemView.findViewById(R.id.txtInscritosRegistro)
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): RegistroViewHolder {
-
-        val vista = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_registro, parent, false)
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RegistroViewHolder {
+        val vista = LayoutInflater.from(parent.context).inflate(R.layout.item_registro, parent, false)
         return RegistroViewHolder(vista)
     }
 
-    override fun onBindViewHolder(
-        holder: RegistroViewHolder,
-        position: Int
-    ) {
-
+    override fun onBindViewHolder(holder: RegistroViewHolder, position: Int) {
         val registro = registros[position]
-
         holder.txtCursoRegistro.text = registro.nombre
-
-        holder.txtInscritosRegistro.text =
-            registro.inscritos.toString() + " inscritos / " +
-                    registro.cupoTotal.toString() + " lugares"
-
+        holder.txtInscritosRegistro.text = registro.inscritos.toString() + " inscritos / " + registro.cupoTotal.toString() + " lugares"
         holder.progresoInscripciones.max = registro.cupoTotal
         holder.progresoInscripciones.progress = registro.inscritos
 
-        val baseUrl = "http://10.110.157.49/cursos_api/"
+        val baseUrl = "http://10.71.241.74/cursos_api/"
         val urlImagen = baseUrl + registro.urlImagen
 
         Glide.with(holder.itemView.context)

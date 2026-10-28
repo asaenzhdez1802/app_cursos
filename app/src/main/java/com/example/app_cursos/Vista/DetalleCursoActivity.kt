@@ -26,7 +26,7 @@ class DetalleCursoActivity : AppCompatActivity() {
     private lateinit var txtHorario: TextView
     private lateinit var btnRegresar: Button
 
-    private val urlServidor = "http://10.110.157.49/cursos_api/"
+    private val urlServidor = "http://10.71.241.74/cursos_api/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

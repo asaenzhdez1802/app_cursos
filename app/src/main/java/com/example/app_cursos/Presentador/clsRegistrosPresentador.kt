@@ -16,9 +16,10 @@ class clsRegistrosPresentador(val vista: RegistrosActivity) {
     private var listaCarreras: List<dataCarreras> = emptyList()
 
     fun iniciar() {
-
+        //se usa para no bloquear la interfaz
         CoroutineScope(Dispatchers.Main).launch {
             try {
+                //Carga la vista con el spiner
                 listaCarreras = modeloCarreras.obtenerCarreras()
                 vista.mostrarCarreras(listaCarreras)
 
@@ -43,15 +44,11 @@ class clsRegistrosPresentador(val vista: RegistrosActivity) {
 
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                val registros =
-                    modeloRegistros.obtenerRegistrosPorCarrera(carreraId)
-
+                val registros = modeloRegistros.obtenerRegistrosPorCarrera(carreraId)
                 vista.mostrarRegistros(registros)
 
             } catch (e: Exception) {
-                vista.mostrarError(
-                    "Error al cargar registros: " + e.localizedMessage
-                )
+                vista.mostrarError("Error al cargar registros: " + e.localizedMessage)
             }
         }
     }

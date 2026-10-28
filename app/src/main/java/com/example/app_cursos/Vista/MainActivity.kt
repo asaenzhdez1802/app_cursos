@@ -47,21 +47,16 @@ class MainActivity : AppCompatActivity() {
         spCarreras = findViewById(R.id.spCarreras)
         rvCursos = findViewById(R.id.rvCursos)
         btnVerRegistros = findViewById(R.id.btnVerRegistros)
-
         presentador = clsCarrerasPresentador(this)
-
         rvCursos.layoutManager = GridLayoutManager(this, 2)
-
         adaptadorCursos = CursosAdaptador(emptyList(), this)
         rvCursos.adapter = adaptadorCursos
 
-        spCarreras.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
+        spCarreras.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
                 override fun onItemSelected(parent: AdapterView<*>?,view: View?,position: Int,id: Long) {
 
-                    val carrera = parent?.getItemAtPosition(position)
-                            as dataCarreras
+                    val carrera = parent?.getItemAtPosition(position) as dataCarreras
                     presentador.obtenerCursosPorCarrera(carrera.id)
                 }
 
