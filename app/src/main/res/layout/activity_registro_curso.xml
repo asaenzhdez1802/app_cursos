@@ -81,11 +81,12 @@
                 android:id="@+id/etMatricula"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:layout_marginBottom="12dp"
                 android:background="@android:drawable/editbox_background_normal"
                 android:hint="20251056"
                 android:inputType="text"
                 android:paddingHorizontal="12dp"
-                android:layout_marginBottom="12dp" />
+                android:textColor="#090909" />
 
             <!-- Fecha de registro -->
             <TextView
@@ -107,10 +108,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@android:drawable/editbox_background_normal"
-                    android:focusable="false"
                     android:clickable="true"
+                    android:focusable="false"
                     android:hint="YYYY-MM-DD"
-                    android:paddingHorizontal="12dp" />
+                    android:paddingHorizontal="12dp"
+                    android:textColor="#0B0B0B" />
 
                 <ImageView
                     android:layout_width="24dp"
@@ -134,12 +136,13 @@
                 android:id="@+id/etCorreoInstitucional"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:layout_marginBottom="24dp"
                 android:background="@android:drawable/editbox_background_normal"
-                android:focusable="false"
                 android:clickable="false"
+                android:focusable="false"
                 android:hint="se carga al validar la matricula"
                 android:paddingHorizontal="12dp"
-                android:layout_marginBottom="24dp" />
+                android:textColor="#161515" />
 
             <!-- Boton Confirmar -->
             <Button

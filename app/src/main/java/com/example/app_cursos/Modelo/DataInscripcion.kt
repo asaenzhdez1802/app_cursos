@@ -3,7 +3,7 @@ package com.example.app_cursos.Modelo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-@Serializable
+@Serializable//permite la clase con kotlin serialization
 data class DataInscripcion(
     @SerialName("curso_id") val cursiId: Int = 0,
     @SerialName("matricula") val matricula: String = "",
