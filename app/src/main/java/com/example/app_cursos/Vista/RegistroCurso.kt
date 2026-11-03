@@ -32,7 +32,6 @@ class RegistroCurso : AppCompatActivity() {
         const val  CURSO_NOMBRE="CURSO_NOMBRE"
         const val  CURSO_IMAGEN="CURSO_IMAGEN"
         private const val BASE_URL = "http://10.71.241.74/cursos_api/"
-        private const val BASE_URL = "http://10.49.208.39/cursos_api/"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
