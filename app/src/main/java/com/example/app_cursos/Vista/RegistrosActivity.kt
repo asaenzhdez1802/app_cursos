@@ -48,6 +48,7 @@ class RegistrosActivity : AppCompatActivity() {
 
         // se configurar la lista de registros
         rvRegistros.layoutManager = LinearLayoutManager(this)
+
         adaptadorRegistros = RegistrosAdaptador(emptyList())
         rvRegistros.adapter = adaptadorRegistros
 
@@ -59,6 +60,7 @@ class RegistrosActivity : AppCompatActivity() {
     }
 
     private fun configurarListeners() {
+
         spCarrerasRegistros.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
 
@@ -80,6 +82,10 @@ class RegistrosActivity : AppCompatActivity() {
 
     fun mostrarRegistros(registros: dataRegistros) {
         txtTotalInscripciones.text = "Total de inscripciones: " + registros.totalInscripciones.toString()
+
+        txtTotalInscripciones.text =
+            "Total de inscripciones: " + registros.totalInscripciones.toString()
+
         adaptadorRegistros.actualizarLista(registros.cursos)
     }
 

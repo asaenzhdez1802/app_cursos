@@ -34,6 +34,7 @@ class RegistrosAdaptador(
         holder.progresoInscripciones.max = registro.cupoTotal
         holder.progresoInscripciones.progress = registro.inscritos
 
+        val baseUrl = "http://10.49.208.39/cursos_api/"
         val baseUrl = "http://10.71.241.74/cursos_api/"
         val urlImagen = baseUrl + registro.urlImagen
 
