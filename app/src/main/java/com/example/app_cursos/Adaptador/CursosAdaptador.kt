@@ -34,7 +34,7 @@ class CursosAdaptador( private var cursos: List<dataCursos>,private val activity
         val curso = cursos[position]
         holder.txtCurso.text = curso.nombre
         holder.txtSalon.text = "Salón: " + curso.salon
-        val baseUrl = "http://10.49.208.39/cursos_api/"
+        val baseUrl = "https://manuelsh.somos4a.org/cursos_api/"
         val urlImagen = baseUrl + curso.urlImagen
         Glide.with(holder.itemView.context)
             .load(urlImagen)
