@@ -1,5 +1,6 @@
 package com.example.app_cursos.Vista
 
+
 import android.os.Bundle
 import android.content.Intent
 import android.view.View
@@ -20,7 +21,9 @@ import com.example.app_cursos.Modelo.dataCursos
 import com.example.app_cursos.Presentador.clsCarrerasPresentador
 import com.example.app_cursos.R
 
+
 class MainActivity : AppCompatActivity() {
+
 
     private lateinit var spCarreras: Spinner
     private lateinit var rvCursos: RecyclerView
@@ -44,21 +47,16 @@ class MainActivity : AppCompatActivity() {
         spCarreras = findViewById(R.id.spCarreras)
         rvCursos = findViewById(R.id.rvCursos)
         btnVerRegistros = findViewById(R.id.btnVerRegistros)
-
         presentador = clsCarrerasPresentador(this)
-
         rvCursos.layoutManager = GridLayoutManager(this, 2)
-
         adaptadorCursos = CursosAdaptador(emptyList(), this)
         rvCursos.adapter = adaptadorCursos
 
-        spCarreras.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
+        spCarreras.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
                 override fun onItemSelected(parent: AdapterView<*>?,view: View?,position: Int,id: Long) {
 
-                    val carrera = parent?.getItemAtPosition(position)
-                            as dataCarreras
+                    val carrera = parent?.getItemAtPosition(position) as dataCarreras
                     presentador.obtenerCursosPorCarrera(carrera.id)
                 }
 
@@ -103,14 +101,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun registrarCurso(curso: dataCursos) {
-
-        // Pendiente: conectar la pantalla de inscripción
-        Toast.makeText(this,"Registrarse en: " + curso.nombre,Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, RegistroCurso::class.java).apply {
+            putExtra(RegistroCurso.CURSO_ID, curso.id)
+            putExtra(RegistroCurso.CURSO_NOMBRE, curso.nombre)
+            putExtra(RegistroCurso.CURSO_IMAGEN, curso.urlImagen)
+        }
+        startActivity(intent)
     }
 
     fun verRegistros() {
+        val intent = Intent(this, RegistrosActivity::class.java)
+        startActivity(intent)
 
-        // Pendiente: conectar la pantalla de registros
-        Toast.makeText( this, "Pantalla de registros pendiente de integrar",Toast.LENGTH_SHORT).show()
     }
 }

@@ -4,7 +4,7 @@ class clsCarrerasModelo {
 
     suspend fun obtenerCarreras(): List<dataCarreras> {
 
-        //Aquí hace el pedido a la BD
+
         val datos = RetrofitClient.apiService.obtenerCarreras()
 
         val listaFinal = mutableListOf(
@@ -13,7 +13,6 @@ class clsCarrerasModelo {
 
         listaFinal.addAll(datos)
 
-        // Retorna la lista directamente
         return listaFinal
     }
 }

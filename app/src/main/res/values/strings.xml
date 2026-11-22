@@ -5,4 +5,6 @@
     <string name="ver_registros">Ver registros</string>
     <string name="ver_detalle">Ver detalle</string>
     <string name="registrarse">Registrarse</string>
+    <string name="titulo_registros">Estado de inscripciones</string>
+    <string name="volver_catalogo">Volver al catálogo</string>
 </resources>

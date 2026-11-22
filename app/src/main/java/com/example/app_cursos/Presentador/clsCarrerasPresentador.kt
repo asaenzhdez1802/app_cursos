@@ -18,13 +18,10 @@ class clsCarrerasPresentador(private val vista: MainActivity) {
 
             try {
                 val carreras = modeloCarreras.obtenerCarreras()
-
                 vista.mostrarCarreras(carreras)
 
             } catch (e: Exception) {
-                vista.mostrarError(
-                    "Error al obtener las carreras: " + e.message
-                )
+                vista.mostrarError("Error al obtener las carreras: " + e.message)
             }
         }
     }
@@ -39,9 +36,7 @@ class clsCarrerasPresentador(private val vista: MainActivity) {
                 vista.mostrarCursos(cursos)
 
             } catch (e: Exception) {
-                vista.mostrarError(
-                    "Error al obtener los cursos: " + e.message
-                )
+                vista.mostrarError("Error al obtener los cursos: " + e.message)
             }
         }
     }
